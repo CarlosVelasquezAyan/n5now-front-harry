@@ -1,14 +1,23 @@
 <template>
   <div id="app">
-    <h1>Harry</h1>
+    <v-container>
+      <v-row :align="'center'">
+        <v-col class="text-center">
+          <CardHarry />
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
 <script>
-
+import CardHarry from "./components/CardHarry.vue";
 export default {
-  name: 'App',
-}
+  name: "App",
+  components: {
+    CardHarry,
+  },
+};
 </script>
 
 <style>
