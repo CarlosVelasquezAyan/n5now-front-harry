@@ -10,7 +10,7 @@
     <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
 
     <v-card-actions>
-      <router-link to="/about">
+      <router-link to="/harry">
         <v-btn color="orange lighten-2" text> about</v-btn>
       </router-link>
 
