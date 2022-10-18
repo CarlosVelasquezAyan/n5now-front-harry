@@ -4,9 +4,7 @@
     <v-card-title> Harry Potter </v-card-title>
     <v-card-actions>
       <router-link :to="{ name: 'harry-potter-characters' }">
-        <v-btn color="orange lighten-2" text>
-          Ir al listado de personajes</v-btn
-        >
+        <v-btn color="orange lighten-2" text> {{ $t("characterListLink") }}</v-btn>
       </router-link>
     </v-card-actions>
   </v-card>

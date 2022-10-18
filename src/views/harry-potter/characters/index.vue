@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <h1>Listado</h1>
+      <h1>{{ $t("characterListTitle") }}</h1>
       <CharacterList />
     </v-row>
   </v-container>
