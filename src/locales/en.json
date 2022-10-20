@@ -4,6 +4,7 @@
   "header1": "Name",
   "header2": "Species",
   "header3": "Gender",
-  "header4": "Image",
-  "header5": "House"
+  "header4": "House",
+  "header5": "Image",
+  "clickImg": "Click to expand image"
 }
