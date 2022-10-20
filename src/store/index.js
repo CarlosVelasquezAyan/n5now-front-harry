@@ -1,11 +1,31 @@
-import Vuex from 'vuex'
-import HarryPotterStore from './modules/HarryPotterStore'
+import Vue from "vue";
+import Vuex from "vuex";
+import axios from "axios";
+Vue.use(Vuex);
 
-const store = () => {
-  return new Vuex.Store({
-    modules: {
-      HarryPotterStore,
-    }
-  })
-}
-export default store
+export default new Vuex.Store({
+  state: {
+    characters: [],
+  },
+  getters: {
+    getCharacters: (state) => state.characters,
+  },
+  actions: {
+    async fetchCharacters({ commit }) {
+      try {
+        const data = await axios.get(
+          "https://hp-api.herokuapp.com/api/characters"
+        );
+        commit("SET_CHARACTERS", data.data);
+      } catch (error) {
+        alert(error);
+        console.log(error);
+      }
+    },
+  },
+  mutations: {
+    SET_CHARACTERS(state, characters) {
+      state.characters = characters;
+    },
+  },
+});

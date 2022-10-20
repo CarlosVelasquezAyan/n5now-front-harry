@@ -2,12 +2,12 @@ import Vue from "vue";
 import singleSpaVue from "single-spa-vue";
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
-import router from "./router";
-import store from "./store";
+import router from "./router/index";
 import i18n from "./i18n";
+import Vuex from "vuex";
+import store from "./store/index.js";
 
 Vue.config.productionTip = false;
-
 // use beforeEach route guard to set the language
 router.beforeEach((to, from, next) => {
   // use the language from the routing param or default language
@@ -42,6 +42,7 @@ const vueLifecycles = singleSpaVue({
     router,
     store,
     i18n,
+    Vuex,
   },
 });
 

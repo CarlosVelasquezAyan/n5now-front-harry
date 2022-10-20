@@ -10,16 +10,6 @@
       class="elevation-1"
       @page-count="pageCount = $event"
     >
-      <template v-slot:item.image="{ item }">
-        <img
-          v-if="item.image"
-          :src="item.image"
-          :alt="item.name"
-          width="200"
-          height="300"
-        />
-        <span v-else>-</span>
-      </template>
     </v-data-table>
     <div class="text-center pt-2">
       <v-pagination v-model="page" :length="pageCount"></v-pagination>
@@ -35,7 +25,6 @@ export default {
       page: 1,
       pageCount: 0,
       itemsPerPage: 10,
-      characters: [],
       errors: [],
     };
   },
@@ -43,37 +32,40 @@ export default {
     headers() {
       return [
         {
-          text: "Nombre",
-          align: "start",
-          sortable: false,
+          text: this.$i18n.t('header1'),
+          align: "center",
+          sortable: true,
           value: "name",
         },
         {
-          text: "Especie",
-          align: "start",
-          sortable: false,
+          text: this.$i18n.t('header2'),
+          align: "center",
+          sortable: true,
           value: "species",
         },
         {
-          text: "Genero",
-          align: "start",
-          sortable: false,
+          text: this.$i18n.t('header3'),
+          align: "center",
+          sortable: true,
           value: "gender",
         },
         {
-          text: "house",
-          align: "start",
-          sortable: false,
+          text: this.$i18n.t('header4'),
+          align: "center",
+          sortable: true,
           value: "house",
         },
         {
-          text: "Foto",
-          align: "start",
-          sortable: false,
+          text: this.$i18n.t('header5'),
+          align: "center",
+          sortable: true,
           value: "image",
         },
       ];
     },
+    characters() {
+      return this.$store.getters.getCharacters
+    }
   },
   methods: {
     ...mapActions(['fetchCharacters'])
