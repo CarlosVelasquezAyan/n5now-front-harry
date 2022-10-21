@@ -2,7 +2,7 @@ import Vue from "vue";
 import singleSpaVue from "single-spa-vue";
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
-import router from "./router/index";
+import router from "./router/index.js";
 import i18n from "./i18n";
 import Vuex from "vuex";
 import store from "./store/index.js";
