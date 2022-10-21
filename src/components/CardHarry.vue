@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="344">
+  <v-card class="mx-auto" max-width="344" style="margin-top: 100px">
     <v-img src="@/assets/Harry_Potter_wordmark.svg"></v-img>
     <v-card-title> Harry Potter </v-card-title>
     <v-card-actions>
